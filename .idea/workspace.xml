@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="916930c9-0028-496a-a869-398a8f851931" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/.codecov.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.4.1/executionHistory/executionHistory.bin" afterDir="false" />
@@ -26,6 +27,10 @@
       <change beforePath="$PROJECT_DIR$/src/test/java/com/webflux/app/AppApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/webflux/app/AppApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/webflux/app/business/config/RouterConfigTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/webflux/app/business/config/RouterConfigTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/webflux/app/core/health/HealthRouterTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/webflux/app/core/health/HealthRouterTest.java" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -79,6 +84,7 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/src/test/java/com/webflux/app/core/health/HealthRouterTest.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="15">
@@ -86,15 +92,28 @@
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
+=======
+        <entry file="file://$PROJECT_DIR$/.codecov.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="390">
+              <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/.codecov.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="405">
               <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+=======
+        <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
             </state>
           </provider>
         </entry>
@@ -114,11 +133,18 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
+=======
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
         <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/src/test/java/com/webflux/app/AppApplicationTests.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/webflux/app/business/config/RouterConfigTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/webflux/app/core/health/HealthRouterTest.java" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/.circleci/config.yml" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
       </list>
     </option>
   </component>
@@ -146,6 +172,27 @@
               <item name="app" type="b2602c69:ProjectViewProjectNode" />
               <item name="app-be" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name=".circleci" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
+=======
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-be" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-be" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="app-be" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+              <item name="reports" type="462c0819:PsiDirectoryNode" />
+              <item name="jacoco" type="462c0819:PsiDirectoryNode" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
             </path>
           </expand>
           <select />
@@ -160,7 +207,11 @@
     <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+<<<<<<< HEAD
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563897976552" />
+=======
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1563898568974" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -297,11 +348,16 @@
       <updated>1563831768551</updated>
       <workItem from="1563831770159" duration="19000" />
       <workItem from="1563831888589" duration="3427000" />
+<<<<<<< HEAD
       <workItem from="1563896413653" duration="1418000" />
+=======
+      <workItem from="1563896413653" duration="1977000" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
     </task>
     <servers />
   </component>
   <component name="TestHistory">
+<<<<<<< HEAD
     <history-entry file="app-be_[test] - 2019.07.23 at 12h 59m 10s.xml">
       <configuration name="app-be [test]" configurationId="GradleRunConfiguration" />
     </history-entry>
@@ -335,6 +391,41 @@
   </component>
   <component name="TimeTrackingManager">
     <option name="totallyTimeSpent" value="4864000" />
+=======
+    <history-entry file="app-be_[check] - 2019.07.23 at 12h 59m 25s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 00m 33s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 00m 56s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 01m 35s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 02m 03s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 02m 48s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 04m 14s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 04m 49s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[test] - 2019.07.23 at 13h 05m 23s.xml">
+      <configuration name="app-be [test]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+    <history-entry file="app-be_[check] - 2019.07.23 at 13h 06m 20s.xml">
+      <configuration name="app-be [check]" configurationId="GradleRunConfiguration" />
+    </history-entry>
+  </component>
+  <component name="TimeTrackingManager">
+    <option name="totallyTimeSpent" value="5423000" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
   </component>
   <component name="ToolWindowManager">
     <frame x="-117" y="-1080" width="1920" height="1080" extended-state="0" />
@@ -407,6 +498,7 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="690">
@@ -421,6 +513,8 @@
         </state>
       </provider>
     </entry>
+=======
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
     <entry file="file://$PROJECT_DIR$/src/test/java/com/webflux/app/AppApplicationTests.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -451,10 +545,31 @@
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/.codecov.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
           <caret line="27" lean-forward="true" selection-start-line="27" selection-end-line="27" />
+=======
+    <entry file="file://$PROJECT_DIR$/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="513">
+          <caret line="68" column="46" selection-start-line="68" selection-start-column="46" selection-end-line="68" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.codecov.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="26" column="16" lean-forward="true" selection-start-line="26" selection-start-column="16" selection-end-line="26" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+>>>>>>> fa7ea6dcce78f1ca14c4418410e7bb5bfbc8a193
         </state>
       </provider>
     </entry>
