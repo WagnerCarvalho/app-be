@@ -4,6 +4,8 @@ plugins {
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'jacoco'
+apply plugin: 'checkstyle'
 
 group = 'com.webflux'
 version = '0.0.1-SNAPSHOT'
@@ -23,3 +25,45 @@ dependencies {
 	testImplementation 'org.junit.jupiter:junit-jupiter-api:5.4.2'
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
+
+jacocoTestReport {
+	reports {
+		xml.enabled = true
+		html.enabled = true
+		xml.destination = file("build/reports/jacoco/report.xml")
+	}
+
+	afterEvaluate {
+		classDirectories.from = classDirectories.files.collect {
+			fileTree(dir: it, exclude: [
+					'com/wearewaes/assignment/ApplicationStarter*'])
+		}
+	}
+}
+
+checkstyle {
+	toolVersion = '8.16'
+	configFile = rootProject.file('checkstyle-main.xml')
+	maxWarnings = 0
+	maxErrors = 0
+	ignoreFailures = false
+}
+
+checkstyleMain {
+	source = 'src/main/java'
+}
+
+checkstyleTest {
+	source = 'src/test/java'
+}
+
+tasks.withType(Checkstyle) {
+	reports {
+		xml.destination = file('build/reports/checkstyle/checkstyle-main.xml')
+	}
+}
+
+tasks.register('assignment_checkstyle') {}
+
+assignment_checkstyle.dependsOn checkstyleMain
+assignment_checkstyle.dependsOn checkstyleTest

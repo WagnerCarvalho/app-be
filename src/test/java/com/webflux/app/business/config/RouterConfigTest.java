@@ -125,6 +125,4 @@ class RouterConfigTest {
             .expectStatus()
             .isNotFound();
   }
-
-
 }

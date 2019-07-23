@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PersonHandler.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">com.webflux.app.business.handler</a> &gt; <span class="el_source">PersonHandler.java</span></div><h1>PersonHandler.java</h1><pre class="source lang-java linenums">package com.webflux.app.business.handler;
+
+import com.webflux.app.business.domain.Person;
+import com.webflux.app.business.exception.BadRequestException;
+import com.webflux.app.business.exception.ValidationException;
+import com.webflux.app.business.repository.PersonRepository;
+import com.webflux.app.business.service.PersonService;
+import org.springframework.stereotype.Component;
+import org.springframework.web.reactive.function.server.ServerRequest;
+import org.springframework.web.reactive.function.server.ServerResponse;
+import reactor.core.publisher.Mono;
+import reactor.core.scheduler.Schedulers;
+import static org.springframework.web.reactive.function.BodyInserters.fromObject;
+import static org.springframework.web.reactive.function.server.ServerResponse.ok;
+import static org.springframework.web.reactive.function.server.ServerResponse.notFound;
+import static reactor.core.publisher.Mono.fromCallable;
+
+@Component
+public class PersonHandler {
+
+  private final PersonService personService;
+  private final PersonRepository personRepository;
+
+<span class="fc" id="L24">  public PersonHandler(final PersonService personService, final PersonRepository personRepository) {</span>
+<span class="fc" id="L25">    this.personService = personService;</span>
+<span class="fc" id="L26">    this.personRepository = personRepository;</span>
+<span class="fc" id="L27">  }</span>
+
+  public Mono&lt;ServerResponse&gt; create(final ServerRequest serverRequest) {
+<span class="nc" id="L30">    return serverRequest.bodyToMono(Person.class)</span>
+<span class="nc" id="L31">            .flatMap(personService::save)</span>
+<span class="nc" id="L32">            .flatMap(personCreate -&gt; ok().body(fromObject(personCreate)))</span>
+<span class="nc" id="L33">            .switchIfEmpty(Mono.defer(() -&gt; notFound().build()))</span>
+<span class="nc" id="L34">            .onErrorMap(ValidationException.class, BadRequestException::new);</span>
+  }
+
+  public Mono&lt;ServerResponse&gt; delete(final ServerRequest serverRequest) {
+<span class="nc" id="L38">    final Long id = Long.valueOf(serverRequest.pathVariable(&quot;id&quot;));</span>
+<span class="nc" id="L39">    return Mono.just(serverRequest.queryParams())</span>
+<span class="nc" id="L40">            .flatMap(deletePerson -&gt; personService.delete(id))</span>
+<span class="nc" id="L41">            .flatMap(personUpdate -&gt; ok().body(fromObject(personUpdate)))</span>
+<span class="nc" id="L42">            .onErrorMap(ValidationException.class, BadRequestException::new);</span>
+  }
+
+  public Mono&lt;ServerResponse&gt; findAll() {
+<span class="nc" id="L46">    return fromCallable(personRepository::findAll)</span>
+<span class="nc" id="L47">            .publishOn(Schedulers.elastic())</span>
+<span class="nc" id="L48">            .flatMap(person -&gt; ok().body(fromObject(person)))</span>
+<span class="nc" id="L49">            .onErrorMap(ValidationException.class, BadRequestException::new);</span>
+  }
+
+  public Mono&lt;ServerResponse&gt; update(final ServerRequest serverRequest) {
+<span class="nc" id="L53">    final Long id = Long.valueOf(serverRequest.pathVariable(&quot;id&quot;));</span>
+<span class="nc" id="L54">    return serverRequest.bodyToMono(Person.class)</span>
+<span class="nc" id="L55">            .flatMap(personUpdate -&gt; personService.update(id, personUpdate))</span>
+<span class="nc" id="L56">            .flatMap(personEntity -&gt; ok().body(fromObject(personEntity)))</span>
+<span class="nc" id="L57">            .switchIfEmpty(Mono.defer(() -&gt; notFound().build()))</span>
+<span class="nc" id="L58">            .onErrorMap(ValidationException.class, BadRequestException::new);</span>
+  }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
