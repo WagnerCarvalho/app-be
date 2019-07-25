@@ -1,9 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <checkstyle version="8.16">
-<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/test/java/com/webflux/app/AppApplicationTests.java">
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/AppApplication.java">
 </file>
-<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/test/java/com/webflux/app/business/config/RouterConfigTest.java">
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/config/RouterConfig.java">
 </file>
-<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/test/java/com/webflux/app/core/health/HealthRouterTest.java">
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/domain/Person.java">
+<error line="50" column="29" severity="warning" message="O parâmetro nickname deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+<error line="55" column="26" severity="warning" message="O parâmetro email deve ser final." source="com.puppycrawl.tools.checkstyle.checks.FinalParametersCheck"/>
+</file>
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/exception/BadRequestException.java">
+</file>
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/exception/ValidationException.java">
+</file>
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/handler/PersonHandler.java">
+</file>
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/repository/PersonRepository.java">
+</file>
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/business/service/PersonService.java">
+</file>
+<file name="/Users/wcarvalho/Desktop/projetos/node/lixo/app-be/src/main/java/com/webflux/app/core/health/HealthRouter.java">
 </file>
 </checkstyle>

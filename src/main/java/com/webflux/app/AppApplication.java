@@ -18,13 +18,4 @@ public class AppApplication {
     SpringApplication.run(AppApplication.class, args);
   }
 
-  @Bean
-  CommandLineRunner start(final PersonRepository personRepository) {
-    return args -> {
-      Person person  = new Person(1L,"wcarvalho", "wcarvalhoti@gmail.com");
-      personRepository.save(person);
-      personRepository.findAll();
-    };
-  }
-
 }
