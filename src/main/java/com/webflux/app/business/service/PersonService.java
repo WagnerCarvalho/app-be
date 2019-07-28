@@ -29,7 +29,7 @@ public class PersonService {
     }
   }
 
-  private Person createPerson(Person person) {
+  private Person createPerson(final Person person) {
     return personRepository.save(person);
   }
 
@@ -47,7 +47,7 @@ public class PersonService {
             .doOnError(e -> log.error("user not registered", e));
   }
 
-  private void deletePerson(Long id) {
+  private void deletePerson(final Long id) {
     personRepository.deleteById(id);
   }
 
@@ -68,9 +68,8 @@ public class PersonService {
             .flatMap(Mono::justOrEmpty)
             .doOnError(e -> log.error("user already registered", e));
   }
-
-
-  private void updateAs(Person person) {
+  
+  private void updateAs(final Person person) {
     personRepository.save(person);
   }
 
