@@ -13,7 +13,7 @@ coverage:
     project:
       default: off
       minimum: # minimum target of coverage needed to pass the check
-        target: 25%
+        target: 80%
       decrement: # maximum decrement of coverage allowed
         target: auto
         threshold: 3.5%
