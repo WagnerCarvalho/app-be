@@ -20,33 +20,41 @@ public class PersonService {
   private PersonRepository personRepository;
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
-  private Person createPerson(final Person person) {
+  public Person validateCreate(final Person person) {
     final Person persistedPersonEntity = personRepository.findFirstByEmail(person.getEmail());
     if (persistedPersonEntity == null) {
-      return personRepository.save(person);
+      return createPerson(person);
     } else {
       throw new ValidationException("user already registered");
     }
   }
 
+  private Person createPerson(Person person) {
+    return personRepository.save(person);
+  }
+
   public Mono<Person> save(final Person person) {
-    return fromCallable(() -> createPerson(person))
+    return fromCallable(() -> validateCreate(person))
             .publishOn(Schedulers.elastic())
             .flatMap(Mono::justOrEmpty)
             .doOnError(e -> log.error("user already registered", e));
   }
 
   public Mono<Person> delete(final Long id) {
-    return fromCallable(() -> deletePerson(id))
+    return fromCallable(() -> validateDelete(id))
             .publishOn(Schedulers.elastic())
             .flatMap(Mono::justOrEmpty)
             .doOnError(e -> log.error("user not registered", e));
   }
 
-  private Optional<Person> deletePerson(final Long id) {
+  private void deletePerson(Long id) {
+    personRepository.deleteById(id);
+  }
+
+  public Optional<Person> validateDelete(final Long id) {
     final Optional<Person> deletePersonEntity = personRepository.findById(id);
     if (deletePersonEntity.isPresent()) {
-      personRepository.deleteById(id);
+      deletePerson(id);
     } else {
       throw new ValidationException("user not registered");
     }
@@ -55,13 +63,18 @@ public class PersonService {
 
   @Transactional
   public Mono<Person> update(final Long id, final Person person) {
-    return fromCallable(() -> updatePerson(id, person))
+    return fromCallable(() -> validateUpdate(id, person))
             .publishOn(Schedulers.elastic())
             .flatMap(Mono::justOrEmpty)
             .doOnError(e -> log.error("user already registered", e));
   }
 
-  private Person updatePerson(final Long id, final Person updatePerson) {
+
+  private void updateAs(Person person) {
+    personRepository.save(person);
+  }
+
+  public Person validateUpdate(final Long id, final Person updatePerson) {
 
     final Optional<Person> updatePersonEntity = personRepository.findById(id);
     if (updatePersonEntity.isPresent()) {
@@ -72,7 +85,7 @@ public class PersonService {
       updatePerson.setEmail(updatePerson.getEmail() == null ? updatePersonEntity.get().getEmail() :
               updatePerson.getEmail());
 
-      personRepository.save(updatePerson);
+      updateAs(updatePerson);
     } else {
       throw new ValidationException("user not registered");
     }

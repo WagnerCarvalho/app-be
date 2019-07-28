@@ -22,10 +22,8 @@ class PersonHandlerTest {
   private PersonRepository personRepository;
 
   private void createData(Person person) {
-    Person data  = new Person(person.getId(),person.getNickname(), person.getEmail());
+    new Person(person.getId(),person.getNickname(), person.getEmail());
     personRepository.save(person);
-    Object aaa = personRepository.findAll();
-    Object bbb = aaa;
   }
 
   @Test
