@@ -8,9 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.reactive.AutoConfigureWebTestClient;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
-import reactor.core.publisher.Mono;
-
-import java.util.List;
 
 @ActiveProfiles("test")
 @AutoConfigureWebTestClient
@@ -23,11 +20,11 @@ class PersonServiceTest {
   @Autowired
   private PersonRepository personRepository;
 
-  private Person findNickname(String nickname) {
+  private Person findNickname(final String nickname) {
     return personRepository.findByNickname(nickname);
   }
 
-  private Person createPerson(){
+  private Person createPerson() {
     Person person  = new Person(1L,"test", "test@bol.com");
     personRepository.save(person);
     return findNickname(person.getNickname());

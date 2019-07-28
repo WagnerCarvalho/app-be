@@ -21,7 +21,7 @@ class PersonHandlerTest {
   @Autowired
   private PersonRepository personRepository;
 
-  private void createData(Person person) {
+  private void createData(final Person person) {
     new Person(person.getId(),person.getNickname(), person.getEmail());
     personRepository.save(person);
   }
@@ -33,7 +33,6 @@ class PersonHandlerTest {
     personRepository.save(person);
     personRepository.findAll();
   }
-
 
   @Test
   @DisplayName("Should POST return OK | BAD REQUEST")
