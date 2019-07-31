@@ -1,5 +1,5 @@
 # webflux-h2
-app webflux wich H2
+app webflux + H2
 
 ### Requisitos Java 8
 
