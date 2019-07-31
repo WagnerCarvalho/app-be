@@ -45,4 +45,25 @@ public class Person {
   public void setEmail(final String email) {
     this.email = email;
   }
+
+  public static class Builder {
+
+    private String nickname;
+    private String email;
+
+    public Builder nickname(final String nickname) {
+      this.nickname = nickname;
+      return this;
+    }
+
+    public Builder email(final String email) {
+      this.email = email;
+      return this;
+    }
+
+    public Person build() {
+      return new Person();
+    }
+  }
+
 }

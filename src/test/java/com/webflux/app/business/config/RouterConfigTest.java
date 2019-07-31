@@ -76,16 +76,16 @@ class RouterConfigTest {
             .uri("/person/1")
             .accept(APPLICATION_JSON_UTF8)
             .contentType(APPLICATION_JSON_UTF8)
-            .syncBody("{\"nickname\":\"mandrova\"}")
+            .syncBody("{\"nickname\":\"mandrova1\"}")
             .exchange()
             .expectStatus()
-            .is2xxSuccessful();
+            .isBadRequest();
     webTestClient
             .put()
             .uri("/person/11")
             .accept(APPLICATION_JSON_UTF8)
             .contentType(APPLICATION_JSON_UTF8)
-            .syncBody("{\"nickname\":\"mandrova\"}")
+            .syncBody("{\"nickname\":\"mandrova2\"}")
             .exchange()
             .expectStatus()
             .isBadRequest();
@@ -94,7 +94,7 @@ class RouterConfigTest {
             .uri("/person_test/1")
             .accept(APPLICATION_JSON_UTF8)
             .contentType(APPLICATION_JSON_UTF8)
-            .syncBody("{\"nickname\":\"mandrova\"}")
+            .syncBody("{\"nickname\":\"mandrova3\"}")
             .exchange()
             .expectStatus()
             .isNotFound();
@@ -109,7 +109,7 @@ class RouterConfigTest {
             .accept(APPLICATION_JSON_UTF8)
             .exchange()
             .expectStatus()
-            .is2xxSuccessful();
+            .isBadRequest();
     webTestClient
             .delete()
             .uri("/person/11")

@@ -5,4 +5,8 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface PersonRepository extends CrudRepository<Person, Long> {
   Person findFirstByEmail(String email);
+
+  Person findByNickname(String nickname);
+
+  Person findAllById(long id);
 }
